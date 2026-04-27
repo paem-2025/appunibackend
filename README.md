@@ -78,6 +78,8 @@ Al arrancar, Spring ejecuta automaticamente:
 
 - `src/main/resources/db/seed_unsada_prioritarios_2026.sql`
 
+Ese archivo es la unica fuente oficial del contenido inicial.
+
 Ese seed carga temas y contenido inicial como:
 
 - Calendario Academico
@@ -87,6 +89,8 @@ Ese seed carga temas y contenido inicial como:
 - Ingresantes
 - Tramites
 - Carreras
+
+No se mantiene una segunda copia manual del seed para evitar desalineaciones.
 
 ## Reset rapido de base
 
