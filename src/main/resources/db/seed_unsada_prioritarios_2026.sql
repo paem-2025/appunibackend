@@ -954,6 +954,308 @@ WHERE NOT EXISTS (
   WHERE `career_key` = 'analista-informatica' AND `subject_code` = 'S'
 );
 
+-- Cobertura de todas las carreras (registro base por carrera)
+-- Nota: Analista en Informatica ya tiene detalle extendido.
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'licenciatura-informatica',
+  'Licenciatura en Informatica',
+  'Plan de carrera vigente',
+  2026,
+  'PLAN',
+  'Plan de correlatividades oficial',
+  NULL,
+  NULL,
+  NULL,
+  'Consultar PDF oficial de la carrera para ver todas las correlatividades por materia.',
+  'Cobertura general de carrera en la app. Se puede ampliar con detalle materia por materia.',
+  'https://www.unsada.edu.ar/academico/oferta-academica'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'licenciatura-informatica' AND `subject_code` = 'PLAN'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'ingenieria-zootecnista',
+  'Ingenieria Zootecnista',
+  'Plan de carrera vigente',
+  2026,
+  'PLAN',
+  'Plan de correlatividades oficial',
+  NULL,
+  NULL,
+  NULL,
+  'Consultar PDF oficial de la carrera para ver todas las correlatividades por materia.',
+  'Cobertura general de carrera en la app. Se puede ampliar con detalle materia por materia.',
+  'https://www.unsada.edu.ar/images/academico/planes_de_carrera_2021/Ingenieria_Zootecnista.pdf'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'ingenieria-zootecnista' AND `subject_code` = 'PLAN'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'tecnicatura-produccion-agropecuaria',
+  'Tecnicatura Universitaria en Produccion Agropecuaria',
+  'Plan de carrera vigente',
+  2026,
+  'PLAN',
+  'Plan de correlatividades oficial',
+  NULL,
+  NULL,
+  NULL,
+  'Consultar PDF oficial de la carrera para ver todas las correlatividades por materia.',
+  'Cobertura general de carrera en la app. Se puede ampliar con detalle materia por materia.',
+  'https://www.unsada.edu.ar/academico/oferta-academica'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'tecnicatura-produccion-agropecuaria' AND `subject_code` = 'PLAN'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'licenciatura-gestion-ambiental',
+  'Licenciatura en Gestion Ambiental',
+  'Plan de carrera vigente',
+  2026,
+  'PLAN',
+  'Plan de correlatividades oficial',
+  NULL,
+  NULL,
+  NULL,
+  'Consultar PDF oficial de la carrera para ver todas las correlatividades por materia.',
+  'Cobertura general de carrera en la app. Se puede ampliar con detalle materia por materia.',
+  'https://www.unsada.edu.ar/images/academico/planes_de_carrera_2021/Licenciatura_Gestion_Ambiental.pdf'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'licenciatura-gestion-ambiental' AND `subject_code` = 'PLAN'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'tecnicatura-gestion-ambiental',
+  'Tecnicatura Universitaria en Gestion Ambiental',
+  'Plan de carrera vigente',
+  2026,
+  'PLAN',
+  'Plan de correlatividades oficial',
+  NULL,
+  NULL,
+  NULL,
+  'Consultar PDF oficial de la carrera para ver todas las correlatividades por materia.',
+  'Cobertura general de carrera en la app. Se puede ampliar con detalle materia por materia.',
+  'https://www.unsada.edu.ar/academico/oferta-academica'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'tecnicatura-gestion-ambiental' AND `subject_code` = 'PLAN'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'tecnicatura-mantenimiento-industrial',
+  'Tecnicatura Universitaria en Mantenimiento Industrial',
+  'Plan de carrera vigente',
+  2026,
+  'PLAN',
+  'Plan de correlatividades oficial',
+  NULL,
+  NULL,
+  NULL,
+  'Consultar PDF oficial de la carrera para ver todas las correlatividades por materia.',
+  'Cobertura general de carrera en la app. Se puede ampliar con detalle materia por materia.',
+  'https://www.unsada.edu.ar/academico/oferta-academica'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'tecnicatura-mantenimiento-industrial' AND `subject_code` = 'PLAN'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'licenciatura-higiene-seguridad-cicc',
+  'Licenciatura en Higiene y Seguridad en el Trabajo - Ciclo de Complementacion Curricular',
+  'Plan de carrera vigente',
+  2026,
+  'PLAN',
+  'Plan de correlatividades oficial',
+  NULL,
+  NULL,
+  NULL,
+  'Consultar PDF oficial de la carrera para ver todas las correlatividades por materia.',
+  'Cobertura general de carrera en la app. Se puede ampliar con detalle materia por materia.',
+  'https://www.unsada.edu.ar/academico/oferta-academica'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'licenciatura-higiene-seguridad-cicc' AND `subject_code` = 'PLAN'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'licenciatura-administracion',
+  'Licenciatura en Administracion',
+  'Plan de carrera vigente',
+  2026,
+  'PLAN',
+  'Plan de correlatividades oficial',
+  NULL,
+  NULL,
+  NULL,
+  'Consultar PDF oficial de la carrera para ver todas las correlatividades por materia.',
+  'Cobertura general de carrera en la app. Se puede ampliar con detalle materia por materia.',
+  'https://www.unsada.edu.ar/images/academico/planes_de_carrera_2021/Licenciatura_Administracion.pdf'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'licenciatura-administracion' AND `subject_code` = 'PLAN'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'tecnicatura-administracion-gestion',
+  'Tecnicatura Universitaria en Administracion y Gestion',
+  'Plan de carrera vigente',
+  2026,
+  'PLAN',
+  'Plan de correlatividades oficial',
+  NULL,
+  NULL,
+  NULL,
+  'Consultar PDF oficial de la carrera para ver todas las correlatividades por materia.',
+  'Cobertura general de carrera en la app. Se puede ampliar con detalle materia por materia.',
+  'https://www.unsada.edu.ar/academico/ingresantes/inscripcion/334-informatica-4'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'tecnicatura-administracion-gestion' AND `subject_code` = 'PLAN'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'enfermeria-universitaria',
+  'Enfermeria Universitaria',
+  'Plan de carrera vigente',
+  2026,
+  'PLAN',
+  'Plan de correlatividades oficial',
+  NULL,
+  NULL,
+  NULL,
+  'Consultar PDF oficial de la carrera para ver todas las correlatividades por materia.',
+  'Cobertura general de carrera en la app. Se puede ampliar con detalle materia por materia.',
+  'https://unsada.edu.ar/images/academico/planes_de_carrera_2021/enfermeria_universitaria.pdf'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'enfermeria-universitaria' AND `subject_code` = 'PLAN'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'tecnicatura-acompanamiento-terapeutico',
+  'Tecnicatura Universitaria en Acompanamiento Terapeutico',
+  'Plan de carrera vigente',
+  2026,
+  'PLAN',
+  'Plan de correlatividades oficial',
+  NULL,
+  NULL,
+  NULL,
+  'Consultar PDF oficial de la carrera para ver todas las correlatividades por materia.',
+  'Cobertura general de carrera en la app. Se puede ampliar con detalle materia por materia.',
+  'https://www.unsada.edu.ar/images/academico/planes_de_carrera_2021/acompanante_terapeutico.pdf'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'tecnicatura-acompanamiento-terapeutico' AND `subject_code` = 'PLAN'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'tecnicatura-gerontologia',
+  'Tecnicatura Universitaria en Gerontologia',
+  'Plan de carrera vigente',
+  2026,
+  'PLAN',
+  'Plan de correlatividades oficial',
+  NULL,
+  NULL,
+  NULL,
+  'Consultar PDF oficial de la carrera para ver todas las correlatividades por materia.',
+  'Cobertura general de carrera en la app. Se puede ampliar con detalle materia por materia.',
+  'https://www.unsada.edu.ar/academico/ingresantes/inscripcion/336-informatica-6'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'tecnicatura-gerontologia' AND `subject_code` = 'PLAN'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'licenciatura-fonoaudiologia',
+  'Licenciatura en Fonoaudiologia',
+  'Plan de carrera vigente',
+  2026,
+  'PLAN',
+  'Plan de correlatividades oficial',
+  NULL,
+  NULL,
+  NULL,
+  'Consultar PDF oficial de la carrera para ver todas las correlatividades por materia.',
+  'Cobertura general de carrera en la app. Se puede ampliar con detalle materia por materia.',
+  'https://www.unsada.edu.ar/academico/ingresantes/inscripcion/336-informatica-6'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'licenciatura-fonoaudiologia' AND `subject_code` = 'PLAN'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'licenciatura-gestion-educativa-cicc',
+  'Licenciatura en Gestion Educativa - Ciclo de Complementacion Curricular',
+  'Plan de carrera vigente',
+  2026,
+  'PLAN',
+  'Plan de correlatividades oficial',
+  NULL,
+  NULL,
+  NULL,
+  'Consultar PDF oficial de la carrera para ver todas las correlatividades por materia.',
+  'Cobertura general de carrera en la app. Se puede ampliar con detalle materia por materia.',
+  'https://www.unsada.edu.ar/academico/oferta-academica'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'licenciatura-gestion-educativa-cicc' AND `subject_code` = 'PLAN'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'licenciatura-administracion-cicc',
+  'Licenciatura en Administracion - Ciclo de Complementacion Curricular',
+  'Plan de carrera vigente',
+  2026,
+  'PLAN',
+  'Plan de correlatividades oficial',
+  NULL,
+  NULL,
+  NULL,
+  'Consultar PDF oficial de la carrera para ver todas las correlatividades por materia.',
+  'Cobertura general de carrera en la app. Se puede ampliar con detalle materia por materia.',
+  'https://www.unsada.edu.ar/academico/oferta-academica'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'licenciatura-administracion-cicc' AND `subject_code` = 'PLAN'
+);
+
 -- --------------------------------------------------------
 -- 10) Alertas de ingresantes (MVP)
 -- --------------------------------------------------------
