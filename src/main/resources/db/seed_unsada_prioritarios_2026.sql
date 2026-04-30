@@ -732,4 +732,402 @@ WHERE NOT EXISTS (
   SELECT 1 FROM `module` WHERE `title` = 'Carreras - Educacion'
 );
 
+-- --------------------------------------------------------
+-- 9) Correlatividades (MVP inicial)
+-- --------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `correlativity` (
+  `idcorrelativity` BIGINT NOT NULL AUTO_INCREMENT,
+  `career_key` VARCHAR(120) NOT NULL,
+  `career_name` VARCHAR(255) NOT NULL,
+  `plan_name` VARCHAR(255) DEFAULT NULL,
+  `plan_year` INT DEFAULT NULL,
+  `subject_code` VARCHAR(20) DEFAULT NULL,
+  `subject_name` VARCHAR(255) NOT NULL,
+  `subject_year` INT DEFAULT NULL,
+  `subject_term` VARCHAR(40) DEFAULT NULL,
+  `requirement_codes` VARCHAR(120) DEFAULT NULL,
+  `requirement_subjects` TEXT DEFAULT NULL,
+  `notes` TEXT DEFAULT NULL,
+  `source_url` VARCHAR(500) DEFAULT NULL,
+  PRIMARY KEY (`idcorrelativity`),
+  KEY `idx_correlativity_career_key` (`career_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'analista-informatica',
+  'Analista en Informatica',
+  'Plan de carrera 2021',
+  2021,
+  'A',
+  'Algoritmos y programacion I',
+  1,
+  '1C',
+  NULL,
+  'Sin correlativas previas.',
+  NULL,
+  'https://www.unsada.edu.ar/images/academico/planes_de_carrera_2021/Analista_en_Informatica.pdf'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'analista-informatica' AND `subject_code` = 'A'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'analista-informatica',
+  'Analista en Informatica',
+  'Plan de carrera 2021',
+  2021,
+  'E',
+  'Algoritmos y programacion II',
+  1,
+  '2C',
+  'A',
+  'Algoritmos y programacion I',
+  'Para cursar esta materia, se requiere tener aprobada/cursada la correlativa indicada en el plan.',
+  'https://www.unsada.edu.ar/images/academico/planes_de_carrera_2021/Analista_en_Informatica.pdf'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'analista-informatica' AND `subject_code` = 'E'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'analista-informatica',
+  'Analista en Informatica',
+  'Plan de carrera 2021',
+  2021,
+  'F',
+  'Matematica II',
+  1,
+  '2C',
+  'B',
+  'Matematica I',
+  'Para cursar esta materia, se requiere tener aprobada/cursada la correlativa indicada en el plan.',
+  'https://www.unsada.edu.ar/images/academico/planes_de_carrera_2021/Analista_en_Informatica.pdf'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'analista-informatica' AND `subject_code` = 'F'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'analista-informatica',
+  'Analista en Informatica',
+  'Plan de carrera 2021',
+  2021,
+  'G',
+  'Arquitectura de computadoras',
+  1,
+  '2C',
+  'C',
+  'Sistemas digitales',
+  'Para cursar esta materia, se requiere tener aprobada/cursada la correlativa indicada en el plan.',
+  'https://www.unsada.edu.ar/images/academico/planes_de_carrera_2021/Analista_en_Informatica.pdf'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'analista-informatica' AND `subject_code` = 'G'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'analista-informatica',
+  'Analista en Informatica',
+  'Plan de carrera 2021',
+  2021,
+  'K',
+  'Estructura de datos',
+  2,
+  '1C',
+  'E',
+  'Algoritmos y programacion II',
+  'La imagen de correlatividades del plan muestra E como requisito.',
+  'https://www.unsada.edu.ar/images/academico/planes_de_carrera_2021/Analista_en_Informatica.pdf'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'analista-informatica' AND `subject_code` = 'K'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'analista-informatica',
+  'Analista en Informatica',
+  'Plan de carrera 2021',
+  2021,
+  'L',
+  'Base de datos',
+  2,
+  '2C',
+  'K',
+  'Estructura de datos',
+  'La imagen de correlatividades del plan muestra K como requisito.',
+  'https://www.unsada.edu.ar/images/academico/planes_de_carrera_2021/Analista_en_Informatica.pdf'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'analista-informatica' AND `subject_code` = 'L'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'analista-informatica',
+  'Analista en Informatica',
+  'Plan de carrera 2021',
+  2021,
+  'M',
+  'Matematica Discreta',
+  2,
+  '2C',
+  'H',
+  'Matematica III',
+  'La imagen de correlatividades del plan muestra H como requisito.',
+  'https://www.unsada.edu.ar/images/academico/planes_de_carrera_2021/Analista_en_Informatica.pdf'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'analista-informatica' AND `subject_code` = 'M'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'analista-informatica',
+  'Analista en Informatica',
+  'Plan de carrera 2021',
+  2021,
+  'N',
+  'Ingenieria de software II',
+  2,
+  '2C',
+  'I',
+  'Ingenieria de software I',
+  'La imagen de correlatividades del plan muestra I como requisito.',
+  'https://www.unsada.edu.ar/images/academico/planes_de_carrera_2021/Analista_en_Informatica.pdf'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'analista-informatica' AND `subject_code` = 'N'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'analista-informatica',
+  'Analista en Informatica',
+  'Plan de carrera 2021',
+  2021,
+  'O',
+  'Probabilidad y Estadistica',
+  3,
+  '1C',
+  'M',
+  'Matematica Discreta',
+  'Correlativas del tercer ano segun plan publicado.',
+  'https://www.unsada.edu.ar/images/academico/planes_de_carrera_2021/Analista_en_Informatica.pdf'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'analista-informatica' AND `subject_code` = 'O'
+);
+
+INSERT INTO `correlativity`
+(`career_key`, `career_name`, `plan_name`, `plan_year`, `subject_code`, `subject_name`, `subject_year`, `subject_term`, `requirement_codes`, `requirement_subjects`, `notes`, `source_url`)
+SELECT
+  'analista-informatica',
+  'Analista en Informatica',
+  'Plan de carrera 2021',
+  2021,
+  'S',
+  'Ingles tecnico',
+  3,
+  '1C',
+  'E,L',
+  'Algoritmos y programacion II + Base de datos',
+  'Correlativas del tercer ano segun plan publicado.',
+  'https://www.unsada.edu.ar/images/academico/planes_de_carrera_2021/Analista_en_Informatica.pdf'
+WHERE NOT EXISTS (
+  SELECT 1 FROM `correlativity`
+  WHERE `career_key` = 'analista-informatica' AND `subject_code` = 'S'
+);
+
+-- --------------------------------------------------------
+-- 10) Alertas de ingresantes (MVP)
+-- --------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `app_alert` (
+  `idapp_alert` BIGINT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(255) NOT NULL,
+  `message` TEXT NOT NULL,
+  `alert_date` DATE NOT NULL,
+  `end_date` DATE DEFAULT NULL,
+  `category` VARCHAR(120) NOT NULL,
+  `audience` VARCHAR(120) NOT NULL,
+  `important` TINYINT(1) NOT NULL DEFAULT 0,
+  `source_url` VARCHAR(500) DEFAULT NULL,
+  `created_at` DATETIME NOT NULL,
+  PRIMARY KEY (`idapp_alert`),
+  KEY `idx_app_alert_dates` (`alert_date`, `end_date`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `app_alert`
+(`title`, `message`, `alert_date`, `end_date`, `category`, `audience`, `important`, `source_url`, `created_at`)
+SELECT
+  'Inscripcion a carreras 2026 abierta',
+  'La inscripcion para ingresantes 2026 se publica en el calendario academico y preinscripcion oficial.',
+  '2025-08-04',
+  '2025-12-31',
+  'Inscripcion',
+  'Ingresantes',
+  1,
+  'https://www.unsada.edu.ar/academico/calendario-academico-2025',
+  NOW()
+WHERE NOT EXISTS (
+  SELECT 1 FROM `app_alert` WHERE `title` = 'Inscripcion a carreras 2026 abierta'
+);
+
+INSERT INTO `app_alert`
+(`title`, `message`, `alert_date`, `end_date`, `category`, `audience`, `important`, `source_url`, `created_at`)
+SELECT
+  'Cierre Progresar 2026',
+  'La convocatoria Progresar nivel superior informo cierre el 30/04/2026. Verificar extensiones o nuevas ventanas.',
+  '2026-04-30',
+  '2026-05-07',
+  'Becas',
+  'Estudiantes',
+  1,
+  'https://unsada.edu.ar/extension/bienestar-universitario/becas-estudiantiles?start=2',
+  NOW()
+WHERE NOT EXISTS (
+  SELECT 1 FROM `app_alert` WHERE `title` = 'Cierre Progresar 2026'
+);
+
+INSERT INTO `app_alert`
+(`title`, `message`, `alert_date`, `end_date`, `category`, `audience`, `important`, `source_url`, `created_at`)
+SELECT
+  'Mesas finales 2do turno',
+  'Inscripcion abierta desde el 27/04/2026. Mesas finales del 11/05/2026 al 16/05/2026.',
+  '2026-04-27',
+  '2026-05-16',
+  'Examenes',
+  'Estudiantes',
+  1,
+  'https://www.unsada.edu.ar/estudiantes/calendario-academico',
+  NOW()
+WHERE NOT EXISTS (
+  SELECT 1 FROM `app_alert` WHERE `title` = 'Mesas finales 2do turno'
+);
+
+INSERT INTO `app_alert`
+(`title`, `message`, `alert_date`, `end_date`, `category`, `audience`, `important`, `source_url`, `created_at`)
+SELECT
+  'Readmision y cambio de carrera (julio)',
+  'Ventana administrativa de julio para readmision, simultaneidad y cambio de carrera. Revisar guia de tramites.',
+  '2025-06-23',
+  '2025-07-18',
+  'Tramites',
+  'Estudiantes',
+  0,
+  'https://www.unsada.edu.ar/academico/guia-de-tramites-academica',
+  NOW()
+WHERE NOT EXISTS (
+  SELECT 1 FROM `app_alert` WHERE `title` = 'Readmision y cambio de carrera (julio)'
+);
+
+-- --------------------------------------------------------
+-- 11) FAQ de ingresantes (Punto 8)
+-- --------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `ingresante_faq` (
+  `idfaq` BIGINT NOT NULL AUTO_INCREMENT,
+  `question` VARCHAR(500) NOT NULL,
+  `answer` TEXT NOT NULL,
+  `category` VARCHAR(120) NOT NULL,
+  `display_order` INT NOT NULL,
+  `source_url` VARCHAR(500) DEFAULT NULL,
+  `created_at` DATETIME NOT NULL,
+  PRIMARY KEY (`idfaq`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `ingresante_faq`
+(`question`, `answer`, `category`, `display_order`, `source_url`, `created_at`)
+SELECT
+  'Si desapruebo una materia, perdi el ano?',
+  'No. En general no perdes todo el ano. Revisa si la materia tiene correlativas y volve a planificar con SIU Guarani y tutoria.',
+  'Cursada',
+  1,
+  'https://www.unsada.edu.ar/estudiantes/tutorias',
+  NOW()
+WHERE NOT EXISTS (
+  SELECT 1 FROM `ingresante_faq` WHERE `question` = 'Si desapruebo una materia, perdi el ano?'
+);
+
+INSERT INTO `ingresante_faq`
+(`question`, `answer`, `category`, `display_order`, `source_url`, `created_at`)
+SELECT
+  'Que significa regularizar una materia?',
+  'Regularizar suele significar cumplir condiciones de cursada para luego rendir final. Verifica siempre el reglamento de tu catedra.',
+  'Cursada',
+  2,
+  'https://g3w.unsada.edu.ar',
+  NOW()
+WHERE NOT EXISTS (
+  SELECT 1 FROM `ingresante_faq` WHERE `question` = 'Que significa regularizar una materia?'
+);
+
+INSERT INTO `ingresante_faq`
+(`question`, `answer`, `category`, `display_order`, `source_url`, `created_at`)
+SELECT
+  'No entiendo SIU Guarani, por donde empiezo?',
+  'Primero confirma tus datos personales, luego mira inscripcion a materias y finalmente historial academico. Si te trabas, pedi ayuda en tutoria.',
+  'Plataformas',
+  3,
+  'https://g3w.unsada.edu.ar',
+  NOW()
+WHERE NOT EXISTS (
+  SELECT 1 FROM `ingresante_faq` WHERE `question` = 'No entiendo SIU Guarani, por donde empiezo?'
+);
+
+INSERT INTO `ingresante_faq`
+(`question`, `answer`, `category`, `display_order`, `source_url`, `created_at`)
+SELECT
+  'Trabajo y estudio: como organizo el cuatrimestre?',
+  'Empeza con menos materias, prioriza correlativas clave y usa calendario con recordatorios de parciales, finales y vencimientos.',
+  'Organizacion',
+  4,
+  'https://www.unsada.edu.ar/academico/calendario-academico-2025',
+  NOW()
+WHERE NOT EXISTS (
+  SELECT 1 FROM `ingresante_faq` WHERE `question` = 'Trabajo y estudio: como organizo el cuatrimestre?'
+);
+
+INSERT INTO `ingresante_faq`
+(`question`, `answer`, `category`, `display_order`, `source_url`, `created_at`)
+SELECT
+  'Si me quiero cambiar de carrera, que hago?',
+  'Hay periodos definidos para cambio de carrera. Revisalos en el calendario y completalo por la guia de tramites academica.',
+  'Tramites',
+  5,
+  'https://www.unsada.edu.ar/academico/guia-de-tramites-academica',
+  NOW()
+WHERE NOT EXISTS (
+  SELECT 1 FROM `ingresante_faq` WHERE `question` = 'Si me quiero cambiar de carrera, que hago?'
+);
+
+INSERT INTO `ingresante_faq`
+(`question`, `answer`, `category`, `display_order`, `source_url`, `created_at`)
+SELECT
+  'Donde veo todas las correlatividades oficiales?',
+  'Entrando al plan de carrera de tu carrera. En la app tenes un resumen inicial, pero la referencia final es el PDF oficial de UNSAdA.',
+  'Correlativas',
+  6,
+  'https://www.unsada.edu.ar/academico/oferta-academica',
+  NOW()
+WHERE NOT EXISTS (
+  SELECT 1 FROM `ingresante_faq` WHERE `question` = 'Donde veo todas las correlatividades oficiales?'
+);
+
 COMMIT;

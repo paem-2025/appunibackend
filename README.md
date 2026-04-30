@@ -39,7 +39,7 @@ Valores usados actualmente:
 - `DB_PORT=3307`
 - `DB_NAME=app_universitaria`
 - `DB_USERNAME=root`
-- `DB_PASSWORD=1234`
+- `DB_PASSWORD=root`
 
 ## Levantar la base de datos
 
