@@ -71,12 +71,6 @@ public class ModuleController {
     
     @GetMapping("/topic-name/{topicName}")
     public ResponseEntity<List<ModuleDTO>> getModulesByTopicName(@PathVariable String topicName) {     
-        List<ModuleDTO> modules = moduleService.getModulesByTopicName(topicName);
-        
-        for (ModuleDTO dto : modules) {
-            System.out.println("  - " + dto.getTitle() + " (Topic: " + dto.getTopicName() + ")");
-        }
-        
-        return ResponseEntity.ok(modules);
+        return ResponseEntity.ok(moduleService.getModulesByTopicName(topicName));
     }
 } 
