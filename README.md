@@ -18,13 +18,13 @@ Backend Spring Boot para la app mobile de apoyo a estudiantes de UNSAdA.
 
 ## Puertos y conexion
 
-- Backend HTTP: `http://localhost:8081`
-- Base de datos MySQL: `localhost:3307`
+- Backend HTTP: `http://localhost:8080`
+- Base de datos MySQL: `localhost:3306`
 - Nombre de base por defecto: `app_universitaria`
 
 El frontend Android consume este backend usando:
 
-- `http://10.0.2.2:8081/` cuando corre en emulador Android
+- `http://10.0.2.2:8080/` cuando corre en emulador Android
 
 `10.0.2.2` es la forma en que el emulador accede al `localhost` de tu PC.
 
@@ -34,9 +34,9 @@ Se toman desde `.env` o desde valores por defecto en `application.properties`.
 
 Valores usados actualmente:
 
-- `SERVER_PORT=8081`
+- `SERVER_PORT=8080`
 - `DB_HOST=localhost`
-- `DB_PORT=3307`
+- `DB_PORT=3306`
 - `DB_NAME=app_universitaria`
 - `DB_USERNAME=root`
 - `DB_PASSWORD=root`
@@ -70,7 +70,7 @@ Git Bash / Linux / macOS:
 ./mvnw spring-boot:run
 ```
 
-Si arranca bien, deberias ver Tomcat en el puerto `8081`.
+Si arranca bien, deberias ver Tomcat en el puerto `8080`.
 
 ## Seed de datos
 
@@ -123,13 +123,13 @@ Proyecto Android relacionado:
 Orden recomendado:
 
 1. Levantar MySQL
-2. Levantar backend en `8081`
+2. Levantar backend en `8080`
 3. Abrir el frontend en Android Studio
 4. Ejecutar la app en emulador
 
 ## Si no conecta
 
-- Verifica que el backend este en `8081`
-- Verifica que MySQL haya levantado en `3307`
+- Verifica que el backend este en `8080`
+- Verifica que MySQL haya levantado en `3306`
 - Si usas celular fisico en vez de emulador, `10.0.2.2` no sirve:
   ahi hay que cambiar la URL base del frontend por la IP local de tu PC
