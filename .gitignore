@@ -36,3 +36,11 @@ build/
 .env
 .env.local
 !.env.example
+
+### Temp artifacts ###
+tmp_pdf_text/
+tmp_pdfs/
+tmp_oferta.html
+docx_render/
+docx_render_explicacion/
+docx_render_final/
