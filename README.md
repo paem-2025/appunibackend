@@ -2,6 +2,10 @@
 
 Backend Spring Boot para la app mobile de apoyo a estudiantes de UNSAdA.
 
+## Informe final
+
+- `Documento_Final_Explicacion_Sistema_UNSAdA.docx`
+
 ## Que expone
 
 - API REST para modulos por categoria (`Becas`, `Carreras`, `Ingresantes`, etc.)
