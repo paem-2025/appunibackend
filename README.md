@@ -76,7 +76,7 @@ Si arranca bien, deberias ver Tomcat en el puerto `8080`.
 
 Al arrancar, Spring ejecuta automaticamente:
 
-- `src/main/resources/db/seed_unsada_prioritarios_2026.sql`
+- `src/main/resources/db/carga_automatica_datos_iniciales_unsada_2026.sql`
 
 Ese archivo es la unica fuente oficial del contenido inicial.
 
@@ -91,6 +91,12 @@ Ese seed carga temas y contenido inicial como:
 - Carreras
 
 No se mantiene una segunda copia manual del seed para evitar desalineaciones.
+
+## Archivos SQL y su uso real
+
+- `src/main/resources/db/carga_automatica_datos_iniciales_unsada_2026.sql`: se ejecuta solo al iniciar el backend (carga inicial).
+- `carga_manual_correlatividades_detalladas.sql`: script opcional para ejecutar manualmente cuando quieras reforzar correlatividades.
+- `respaldo_bd/respaldo_completo_bd_app_universitaria.sql`: respaldo completo de base (estructura + datos) para importar manualmente.
 
 ## Reset rapido de base
 
